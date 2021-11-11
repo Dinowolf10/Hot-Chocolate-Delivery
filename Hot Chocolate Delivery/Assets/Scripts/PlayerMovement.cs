@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //variables for movmeent and gravity
     public CharacterController controller;
     public float speed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
+    //velocity for gravity calculations
     Vector3 velocity;
 
-
+    //variables for checking if there is ground below the character
     public Transform groundCheck;
     public float groundDist = 0.4f;
     public LayerMask groundMask;
@@ -26,35 +28,42 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if player is holding down shift, sprint
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 24f;
         }
 
+        //when the player stops sprinting, change the speed to reflect that
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = 12f;
         }
 
+        //check the player to see if they are grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
 
+        //if the player is grouned, keep the velocity constant
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
 
+        //hook up the movement to the controls on the keyboard
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        //move the player
         Vector3 move = transform.right * x + transform.forward * z;
-
         controller.Move(move * speed * Time.deltaTime);
 
+        //if the playrer is on the ground and they are trying to jump, they jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
+        //calculate rate of fall when player falls
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
