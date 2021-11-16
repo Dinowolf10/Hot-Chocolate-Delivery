@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    // variables for ice movement
+    public bool OnIce = false; // ice blocks change this from their script
+    private Vector3 lastMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +58,14 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         //move the player
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
+        if(OnIce && Input.GetKey("w") == false && Input.GetKey("a") == false && Input.GetKey("s") == false && Input.GetKey("d") == false) {
+            // on ice and no movement being pressed: slip
+            controller.Move(lastMovement * Time.deltaTime);
+        } else {
+            Vector3 move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.deltaTime);
+            lastMovement = move * speed;
+        }
 
         //if the playrer is on the ground and they are trying to jump, they jump
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -66,6 +76,5 @@ public class PlayerMovement : MonoBehaviour
         //calculate rate of fall when player falls
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
     }
 }
