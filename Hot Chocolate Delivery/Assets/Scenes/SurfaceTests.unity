@@ -196,9 +196,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6408105877289889811, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
+      propertyPath: mouseSensitivity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6408105878412317367, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408105878835246442, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
+      propertyPath: dashForce
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6408105878835246442, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
       propertyPath: groundDist

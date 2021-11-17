@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ada9bf6afeeec439b1c0459f0b5f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   controller: {fileID: 6408105878835246444}
   speed: 12
   gravity: -9.81
@@ -299,3 +300,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  isJumping: 0
+  isDashing: 0
+  dashForce: 5
+  OnIce: 0
