@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7494229042189750307}
   m_Layer: 6
   m_Name: Cracked Surface
-  m_TagString: Untagged
+  m_TagString: CrackedIce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
