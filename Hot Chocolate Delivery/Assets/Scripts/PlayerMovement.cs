@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     //variables for movmeent and gravity
     public CharacterController controller;
     public float speed = 12f;
-    public float gravity = -9.81f;
+    public float gravity = -15f;
     public float jumpHeight = 3f;
 
     //velocity for gravity calculations
@@ -138,5 +138,36 @@ public class PlayerMovement : MonoBehaviour
 
         // Sets isDashing to false
         isDashing = false;
+    }
+
+
+    /// <summary>
+    /// if the player hits a wall with the tag "LeftWall" or "RightWall", the camera will tilt in the needed direction, and player can "wallrun"
+    /// </summary>
+    /// <param name="hit"></param>
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        //if player hits an object with one of these tags, increase their speed and lower the force of gravity
+        if (hit.gameObject.tag == ("RightWall") || hit.gameObject.tag == ("LeftWall"))
+        {
+            gravity = -7f;
+            speed = 17f;
+            //addd camera tilt here
+            if (hit.gameObject.tag == ("RightWall"))
+            {
+                Camera.main.transform.rotation = Quaternion.Euler(0, 0, 13);
+            }
+            else if(hit.gameObject.tag == ("LeftWall"))
+            {
+                Camera.main.transform.rotation = Quaternion.Euler(0, 0, -13);
+            }
+        }
+        else if (hit.gameObject.tag == ("RightWall") || hit.gameObject.tag == ("LeftWall"))
+        {
+            gravity = -15f;
+            speed = 12f;
+            //remove camera tilt here
+
+        }
     }
 }

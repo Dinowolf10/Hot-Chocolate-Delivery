@@ -909,6 +909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snowball Climb
       objectReference: {fileID: 0}
+    - target: {fileID: 6886869926062456469, guid: 4d9494125011a7e4896ddbd81aa082ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6886869926062456473, guid: 4d9494125011a7e4896ddbd81aa082ad, type: 3}
       propertyPath: m_RootOrder
       value: 9
