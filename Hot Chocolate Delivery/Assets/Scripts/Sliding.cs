@@ -12,6 +12,7 @@ public class Sliding : MonoBehaviour
     float modifiedHeight;
 
     public float slideSpeed = 15f;
+    public float speed = 12f;
 
     bool isSliding;
 
@@ -34,7 +35,35 @@ public class Sliding : MonoBehaviour
         {
             GoUp();
         }
-    }
+
+        // - slide -    
+        if (Input.GetKeyDown("f") && !isSliding) // press F to slide
+        {
+            slideTimer = 0.0; // start timer
+            isSliding = true;
+            slideForward = tr.forward;
+        }
+        if (isSliding)
+        {
+            h = 0.5 * height; // height is crouch height
+            speed = slideSpeed; // speed is slide speed
+            chMotor.movement.velocity = slideForward * speed;
+
+            slideTimer += Time.deltaTime;
+            if (slideTimer > slideTimerMax)
+            {
+                isSliding = false;
+            }
+        }
+
+        // - apply movement modifiers -    
+        chMotor.movement.maxForwardSpeed = speed; // set max speed
+        var lastHeight = controller.height; // crouch/stand up smoothly 
+        controller.height = Mathf.Lerp(controller.height, h, 5 * Time.deltaTime);
+        tr.position.y += (controller.height - lastHeight) / 2; // fix vertical position
+    
+
+}
 
     private void IsSliding()
     {
