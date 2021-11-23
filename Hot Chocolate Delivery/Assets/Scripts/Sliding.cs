@@ -10,9 +10,15 @@ public class Sliding : MonoBehaviour
 
     float originalHeight;
     float modifiedHeight;
+    public Transform tr;
 
-    public float slideSpeed = 15f;
-    public float speed = 12f;
+    public float slideSpeed = 0.2f;
+    public float speed = 6f;
+
+    private float height; // initial height
+    private Vector3 slideForward; // direction of slide
+    private float slideTimer = 0.0f;
+    public float slideTimerMax = 0.05f; // time while sliding
 
     bool isSliding;
 
@@ -20,34 +26,26 @@ public class Sliding : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-       // rig = GetComponent<Rigidbody>();
+        tr = transform;
         originalHeight = controller.height;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.W))
-        {
-            IsSliding();
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            GoUp();
-        }
 
         // - slide -    
-        if (Input.GetKeyDown("f") && !isSliding) // press F to slide
+        if (Input.GetKeyDown(KeyCode.F) && !isSliding) // press F to slide
         {
-            slideTimer = 0.0; // start timer
+            slideTimer = 0.0f; // start timer
             isSliding = true;
             slideForward = tr.forward;
         }
         if (isSliding)
         {
-            h = 0.5 * height; // height is crouch height
+            controller.height = 0.5f * height; // height is crouch height
             speed = slideSpeed; // speed is slide speed
-            chMotor.movement.velocity = slideForward * speed;
+            controller.Move(slideForward * speed);
 
             slideTimer += Time.deltaTime;
             if (slideTimer > slideTimerMax)
@@ -57,23 +55,14 @@ public class Sliding : MonoBehaviour
         }
 
         // - apply movement modifiers -    
-        chMotor.movement.maxForwardSpeed = speed; // set max speed
+        speed = slideSpeed; // set max speed
         var lastHeight = controller.height; // crouch/stand up smoothly 
-        controller.height = Mathf.Lerp(controller.height, h, 5 * Time.deltaTime);
-        tr.position.y += (controller.height - lastHeight) / 2; // fix vertical position
-    
+        controller.height = Mathf.Lerp(controller.height, controller.height, 5 * Time.deltaTime);
+        // fix vertical position
+        tr.position = new Vector3(tr.position.x, tr.position.y + (controller.height - lastHeight) / 2, tr.position.z);
 
 }
 
-    private void IsSliding()
-    {
-        controller.height = modifiedHeight;
-        controller.attachedRigidbody.AddForce(transform.forward * slideSpeed, ForceMode.VelocityChange);
-    }
 
-    private void GoUp()
-    {
-        controller.height = originalHeight;
-    }
 
 }
