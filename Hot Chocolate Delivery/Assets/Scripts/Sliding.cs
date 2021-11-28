@@ -53,6 +53,10 @@ public class Sliding : MonoBehaviour
                 isSliding = false;
             }
         }
+        else
+        {
+            controller.height = originalHeight;
+        }
 
         // - apply movement modifiers -    
         speed = slideSpeed; // set max speed

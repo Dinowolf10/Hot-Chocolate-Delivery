@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     //variables for movmeent and gravity
     public CharacterController controller;
-    public float speed = 12f;
-    public float gravity = -15f;
-    public float jumpHeight = 3f;
+    public float speed = 24f;
+    public float gravity = -30f;
+    public float jumpHeight = 5f;
 
     //velocity for gravity calculations
     Vector3 velocity;
@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if player is holding down shift, sprint
+      /*  //if player is holding down shift, sprint
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 24f;
         }
-
+      */
         //when the player stops sprinting, change the speed to reflect that
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -151,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
         if (hit.gameObject.tag == ("RightWall") || hit.gameObject.tag == ("LeftWall"))
         {
             gravity = -7f;
-            speed = 17f;
+            speed = 30f;
             //addd camera tilt here
             if (hit.gameObject.tag == ("RightWall"))
             {
@@ -162,10 +162,10 @@ public class PlayerMovement : MonoBehaviour
                 Camera.main.transform.rotation = Quaternion.Euler(0, 0, -13);
             }
         }
-        else if (hit.gameObject.tag == ("RightWall") || hit.gameObject.tag == ("LeftWall"))
+        else
         {
-            gravity = -15f;
-            speed = 12f;
+            gravity = -20f;
+            speed = 24f;
             //remove camera tilt here
 
         }

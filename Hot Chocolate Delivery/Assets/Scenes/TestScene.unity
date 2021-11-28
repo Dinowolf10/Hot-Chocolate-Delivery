@@ -128,6 +128,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6408105878835246447, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
   m_PrefabInstance: {fileID: 6408105878240484710}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &382536744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382536743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ada9bf6afeeec439b1c0459f0b5f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 382536745}
+  speed: 24
+  gravity: -30
+  jumpHeight: 5
+  groundCheck: {fileID: 524101967}
+  groundDist: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  isGrounded: 0
+  isJumping: 0
+  isDashing: 0
+  hasDashed: 0
+  dashForce: 5
+  dashDuration: 0.1
+  OnIce: 0
+--- !u!143 &382536745 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 6408105878835246444, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
+  m_PrefabInstance: {fileID: 6408105878240484710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &382536746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +177,11 @@ MonoBehaviour:
   slideSpeed: 0.3
   speed: 6
   slideTimerMax: 0.5
+--- !u!4 &524101967 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6408105877984492466, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
+  m_PrefabInstance: {fileID: 6408105878240484710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &527966075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6408105878835246445, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
@@ -579,5 +617,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6408105878835246442, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}

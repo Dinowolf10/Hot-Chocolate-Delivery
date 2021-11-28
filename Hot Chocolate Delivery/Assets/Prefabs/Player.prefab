@@ -293,9 +293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6408105878835246444}
-  speed: 12
-  gravity: -9.81
-  jumpHeight: 3
+  speed: 24
+  gravity: -30
+  jumpHeight: 5
   groundCheck: {fileID: 6408105877984492466}
   groundDist: 0.4
   groundMask:
@@ -306,7 +306,7 @@ MonoBehaviour:
   isDashing: 0
   hasDashed: 0
   dashForce: 5
-  dashDuration: 0.2
+  dashDuration: 0.1
   OnIce: 0
 --- !u!1 &7591006732702220842
 GameObject:
