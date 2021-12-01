@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ThrowSnowball : MonoBehaviour
 {
@@ -12,10 +13,20 @@ public class ThrowSnowball : MonoBehaviour
     List<GameObject> snowballs;
     public Camera cameraMain;
 
+    private GameObject levelManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        try
+        {
+            // Stores reference to LevelManager game object
+            levelManager = GameObject.Find("LevelManager");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.Message);
+        }
     }
 
     // Update is called once per frame
@@ -23,7 +34,7 @@ public class ThrowSnowball : MonoBehaviour
     {
         
         timeSinceThrow += Time.deltaTime;
-        if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime)
+        if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime && !levelManager.GetComponent<LevelManager>().gamePaused)
         {
             timeSinceThrow = 0.0f;
             GameObject clone = Instantiate(snowball, transform.position, transform.rotation);
