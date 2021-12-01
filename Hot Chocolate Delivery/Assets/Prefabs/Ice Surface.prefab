@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7513436121334006064}
   - component: {fileID: 4023409834831575618}
   - component: {fileID: 4023409834831575617}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Ice Surface
   m_TagString: Ice
   m_Icon: {fileID: 0}

@@ -1151,6 +1151,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c57cc944ffcda54092e31e2fe6acbee, type: 3}
+--- !u!1001 &4421329991111341411
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337604, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337607, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_Name
+      value: SnowballExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421329992638337607, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 557e1788935bf7a4a9cfc81e80897f0b, type: 3}
 --- !u!1001 &5566429634219481530
 PrefabInstance:
   m_ObjectHideFlags: 0
