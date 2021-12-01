@@ -830,7 +830,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8457327119719572386, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
       propertyPath: m_Name
-      value: Time Limit
+      value: TimeLimit
       objectReference: {fileID: 0}
     - target: {fileID: 8457327119719572390, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
       propertyPath: m_Pivot.x

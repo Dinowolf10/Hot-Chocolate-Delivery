@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8457327119719572388}
   - component: {fileID: 8457327119719572389}
   m_Layer: 5
-  m_Name: Time Limit
+  m_Name: TimeLimit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
