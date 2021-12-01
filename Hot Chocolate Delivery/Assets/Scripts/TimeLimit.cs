@@ -31,6 +31,7 @@ public class TimeLimit : MonoBehaviour
             TimeLeft -= Time.deltaTime;
             this.gameObject.GetComponent<UnityEngine.UI.Text>().text = "Time Remaining: " + (int)TimeLeft;
             if(TimeLeft <= 0.0f) {
+
                 // Calls TimeUp method from levelManager
                 levelManager.GetComponent<LevelManager>().TimeUp();
             }
