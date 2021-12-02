@@ -7,13 +7,14 @@ public class ThrowSnowball : MonoBehaviour
 {
     //fields
     public GameObject snowball;
-    public int throwStrength = 1000;
+    public int throwStrength = 2000;
     public int reloadTime = 1;
     private float timeSinceThrow = 1.0f;
     List<GameObject> snowballs;
     public Camera cameraMain;
 
     private GameObject levelManager;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ThrowSnowball : MonoBehaviour
         {
             // Stores reference to LevelManager game object
             levelManager = GameObject.Find("LevelManager");
+            player = GameObject.Find("Player");
         }
         catch (Exception e)
         {
@@ -37,9 +39,14 @@ public class ThrowSnowball : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime && !levelManager.GetComponent<LevelManager>().gamePaused)
         {
             timeSinceThrow = 0.0f;
-            GameObject clone = Instantiate(snowball, transform.position, transform.rotation);
-            clone.GetComponent<Rigidbody>().AddForce(cameraMain.transform.forward * throwStrength); //from cam position
-            //clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength); //on 2D plane
+            GameObject clone = SnowballPool.SharedInstance.GetPooledObject();// (snowball, transform.position, transform.rotation);
+            if(clone != null)
+            {
+                clone.transform.position = transform.position;
+                clone.transform.rotation = transform.rotation;
+                clone.SetActive(true);
+                clone.GetComponent<Rigidbody>().AddForce((cameraMain.transform.forward) * throwStrength); //from cam position
+            }
         }
 
         //foreach(GameObject s in snowballs)

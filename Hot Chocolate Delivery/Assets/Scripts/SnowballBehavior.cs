@@ -6,7 +6,6 @@ public class SnowballBehavior : MonoBehaviour
 {
     //fields 
     public GameObject iceToSpawn;
-    private Vector3 poolLoc = new Vector3(100, -100, 100);
     private float offset = 4;
 
     // Start is called before the first frame update
@@ -64,7 +63,6 @@ public class SnowballBehavior : MonoBehaviour
 
     private void AddToPool()
     {
-        this.transform.position = poolLoc;
-        this.enabled = false;    
+        gameObject.SetActive(false);
     }
 }
