@@ -17,7 +17,7 @@ public class MouseLook : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //calculate look sensitivity
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
