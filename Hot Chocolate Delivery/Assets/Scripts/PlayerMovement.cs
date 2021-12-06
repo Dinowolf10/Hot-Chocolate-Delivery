@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     // variables for ice movement
     public bool OnIce = false; // ice blocks change this from their script
-    private Vector3 lastMovement;
+    private Vector3 lastMovement = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -96,12 +96,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //move the player
-        if (OnIce && Input.GetKey("w") == false && Input.GetKey("a") == false && Input.GetKey("s") == false && Input.GetKey("d") == false && !isDashing) {
-            // on ice and no movement being pressed: slip
+        Vector3 move = transform.right * x + transform.forward * z;
+        if (OnIce) {
+            lastMovement += move * 0.8f; // accelerate. Change this to change how slippery it is
+            if(lastMovement.magnitude > speed) {
+                lastMovement = lastMovement.normalized;
+                lastMovement *= speed;
+            }
             controller.Move(lastMovement * Time.deltaTime);
         } else {
-            Vector3 move = transform.right * x + transform.forward * z;
-            
             // If player isDashing, move player forward and include dashForce in movement
             if (isDashing)
             {
@@ -112,8 +115,9 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 controller.Move(move * speed * Time.deltaTime);
-                lastMovement = move * speed;
             }
+
+            lastMovement = move; // prepare for ice movement
         }
 
         if (!isDashing)

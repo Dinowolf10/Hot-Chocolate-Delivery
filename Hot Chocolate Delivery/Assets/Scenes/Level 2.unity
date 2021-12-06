@@ -203,6 +203,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4019465569953332730, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
+      propertyPath: amountToPool
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019465569953332730, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 8717680047428194778, guid: 3835159e890dbe842bc49924c7e450e0, type: 3}
     - target: {fileID: 6408105877289889811, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
       propertyPath: mouseSensitivity
       value: 150

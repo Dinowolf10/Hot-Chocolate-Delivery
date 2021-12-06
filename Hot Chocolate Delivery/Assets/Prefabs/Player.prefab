@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e94637cb459b545850dfe4f5eb5f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 180
   playerBody: {fileID: 6408105878835246445}
 --- !u!1 &6408105877984492469
 GameObject:
@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 6408105878835246445}
   - component: {fileID: 6408105878835246444}
   - component: {fileID: 6408105878835246442}
+  - component: {fileID: 4019465569953332730}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -308,6 +309,21 @@ MonoBehaviour:
   dashForce: 5
   dashDuration: 0.1
   OnIce: 0
+--- !u!114 &4019465569953332730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6408105878835246447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6abcc21152db341834b9a6b2986936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 0}
+  amountToPool: 0
 --- !u!1 &7591006732702220842
 GameObject:
   m_ObjectHideFlags: 0

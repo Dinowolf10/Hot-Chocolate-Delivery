@@ -243,6 +243,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4019465569953332730, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
+      propertyPath: amountToPool
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6408105878835246442, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
       propertyPath: dashDuration
       value: 0.15
@@ -295,7 +299,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4019465569953332730, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c2637cffd30ba74cb25cc6f06dd2e0d, type: 3}
 --- !u!1 &620135580
 GameObject:
