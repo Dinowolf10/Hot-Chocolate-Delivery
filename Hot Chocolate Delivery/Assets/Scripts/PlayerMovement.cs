@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Determines dash force and duration
     [SerializeField]
-    private float dashForce = 5f, dashDuration = 0.1f;
+    private float dashForce = 5f, dashDuration = 0.15f;
 
     // variables for ice movement
     public bool OnIce = false; // ice blocks change this from their script

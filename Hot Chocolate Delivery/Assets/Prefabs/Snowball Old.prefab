@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb0ab3cd281ecf4ca5ebefd90c42f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iceToSpawn: {fileID: 7513436121334006065, guid: 865841fb82ca80b4da05bf24634e7b7b, type: 3}
+  iceToSpawn: {fileID: 6886869926062456469, guid: 4d9494125011a7e4896ddbd81aa082ad, type: 3}
