@@ -307,7 +307,7 @@ MonoBehaviour:
   isDashing: 0
   hasDashed: 0
   dashForce: 5
-  dashDuration: 0.1
+  dashDuration: 0.15
   OnIce: 0
 --- !u!114 &4019465569953332730
 MonoBehaviour:
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snowball: {fileID: 8717680047428194778, guid: 3835159e890dbe842bc49924c7e450e0, type: 3}
-  throwStrength: 1000
+  throwStrength: 2000
   reloadTime: 1
   cameraMain: {fileID: 6408105877289889813}
 --- !u!1001 &532315561

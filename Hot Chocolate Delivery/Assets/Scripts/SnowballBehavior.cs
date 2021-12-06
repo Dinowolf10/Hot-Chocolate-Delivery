@@ -54,7 +54,7 @@ public class SnowballBehavior : MonoBehaviour
                 //        spawnPoint.z -= offset;
                 //}
                 GameObject clone = Instantiate(iceToSpawn, spawnPoint, collision.transform.rotation);
-                clone.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+                clone.transform.localScale = new Vector3(5.0f, 3.0f, 5.0f);
                 this.AddToPool();
                 break;
             default:
