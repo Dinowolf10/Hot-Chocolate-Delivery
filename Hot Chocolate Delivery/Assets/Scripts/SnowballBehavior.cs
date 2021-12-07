@@ -7,17 +7,25 @@ public class SnowballBehavior : MonoBehaviour
     //fields 
     public GameObject iceToSpawn;
     private float offset = 4;
+    private GameObject levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelManager = GameObject.Find("LevelManager");
     }
 
     // Update is called once per frame
     void Update()
     {   
-        
+        if(transform.position.y < -50)
+        {
+            this.AddToPool();
+        }
+        else if (Input.GetMouseButtonDown(0) && !levelManager.GetComponent<LevelManager>().gamePaused && isActiveAndEnabled)
+        {
+            SpawnIce();
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,43 +38,45 @@ public class SnowballBehavior : MonoBehaviour
                 this.AddToPool();
                 break;
             case "RegSurface":
-                Vector3 spawnPoint = transform.position;
-                //attempt at offsetting it properly but I am not awake enough to finish
-                //if (Mathf.Abs(transform.position.x - collision.transform.position.x) > iceToSpawn.transform.localScale.x / 2)
-                //{
-                //    if (transform.position.x > collision.transform.position.x)
-                //        spawnPoint.x += offset;
-                //    if (transform.position.x < collision.transform.position.x)
-                //        spawnPoint.x -= offset;
-                //}
-                //if (Mathf.Abs(transform.position.y - collision.transform.position.y) > iceToSpawn.transform.localScale.y / 2)
-                //{
-                //    if (transform.position.y > collision.transform.position.y)
-                //        spawnPoint.y += offset;
-                //    if (transform.position.y < collision.transform.position.y)
-                //        spawnPoint.y -= offset;
-                //}
-                //if (Mathf.Abs(transform.position.z - collision.transform.position.z) > iceToSpawn.transform.localScale.z / 2)
-                //{
-                //    if (transform.position.z > collision.transform.position.z)
-                //        spawnPoint.z += offset;
-                //    if (transform.position.z < collision.transform.position.z)
-                //        spawnPoint.z -= offset;
-                //}
-                GameObject clone = Instantiate(iceToSpawn, spawnPoint, collision.transform.rotation);
-                clone.transform.localScale = new Vector3(5.0f, 3.0f, 5.0f);
-                this.AddToPool();
+            case "LeftWall":
+            case "RightWall":
+                SpawnIce(collision);
                 break;
             default:
                 break;
         }
     }
 
+    /// <summary>
+    /// send the object back to the pool
+    /// </summary>
     private void AddToPool()
     {
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// spawn ice at the current snowball location
+    /// </summary>
+    private void SpawnIce()
+    {
+        Vector3 spawnPoint = transform.position;
+        GameObject clone = Instantiate(iceToSpawn, spawnPoint, Quaternion.identity);
+        clone.transform.localScale = new Vector3(5.0f, 3.0f, 5.0f);
+        this.AddToPool();
+    }
+    /// <summary>
+    /// spawn snowball at the current collision location
+    /// </summary>
+    /// <param name="collision">Object the snowball collides with</param>
+    private void SpawnIce(Collision collision)
+    {
+        Vector3 spawnPoint = transform.position;
+        GameObject clone = Instantiate(iceToSpawn, spawnPoint, collision.transform.rotation);
+        clone.transform.localScale = new Vector3(5.0f, 3.0f, 5.0f);
+        this.AddToPool();
     }
 }

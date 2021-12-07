@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262606cee8b459a4f90eeb82d3a735cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snowball: {fileID: 8717680047428194778, guid: 3835159e890dbe842bc49924c7e450e0, type: 3}
+  snowball: {fileID: 5111298635219768151, guid: 5e7842083972c5944b090e5b87720e51, type: 3}
   throwStrength: 2000
   reloadTime: 1
   cameraMain: {fileID: 6408105877289889813}
