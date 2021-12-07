@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class LevelManager : MonoBehaviour
     private GameObject pauseMenu;
 
     public bool gamePaused = false;
+
+    public bool timeUp = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,9 @@ public class LevelManager : MonoBehaviour
 
         // Makes sure game is not paused
         ResumeGame();
+
+        // Resets timeUp to false
+        timeUp = false;
     }
 
     // Update is called once per frame
@@ -59,6 +65,9 @@ public class LevelManager : MonoBehaviour
     {
         // Tells player they ran out of time
         timeLimit.GetComponentInChildren<UnityEngine.UI.Text>().text = "Ran out of time!";
+
+        // Sets timeUp to true
+        timeUp = true;
     }
 
     /// <summary>
@@ -95,5 +104,13 @@ public class LevelManager : MonoBehaviour
 
         // Locks the mouse
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    /// <summary>
+    /// Loads the next scene
+    /// </summary>
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
