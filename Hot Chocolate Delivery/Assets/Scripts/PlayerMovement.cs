@@ -95,6 +95,15 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
         }
 
+        if(isJumping == true)
+        {
+            controller.stepOffset = 0;
+        }
+        else
+        {
+            controller.stepOffset = 0.7f;
+        }
+
         //move the player
         Vector3 move = transform.right * x + transform.forward * z;
         if (OnIce) {
