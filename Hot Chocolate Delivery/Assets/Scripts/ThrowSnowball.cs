@@ -34,7 +34,6 @@ public class ThrowSnowball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         timeSinceThrow += Time.deltaTime;
         if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime && !levelManager.GetComponent<LevelManager>().gamePaused)
         {
@@ -43,15 +42,11 @@ public class ThrowSnowball : MonoBehaviour
             if(clone != null)
             {
                 clone.transform.position = transform.position;
+                //clone.transform.rotation = new Quaternion(cameraMain.transform.rotation.x, player.transform.rotation.y, player.transform.rotation.z, player.transform.rotation.w);
                 clone.transform.rotation = transform.rotation;
                 clone.SetActive(true);
-                clone.GetComponent<Rigidbody>().AddForce((cameraMain.transform.forward) * throwStrength); //from cam position
+                clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength); //from cam position
             }
         }
-
-        //foreach(GameObject s in snowballs)
-        //{
-        //    if(s.GetComponent<Rigidbody>.on)
-        //}
     }
 }

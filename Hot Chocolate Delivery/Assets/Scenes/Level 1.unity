@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  objectToPool: {fileID: 8717680047428194778, guid: 3835159e890dbe842bc49924c7e450e0, type: 3}
+  objectToPool: {fileID: 919132149155446097, guid: f7ecca617e0918748b6079a2b1aef775, type: 3}
   amountToPool: 10
 --- !u!1001 &325549756
 PrefabInstance:

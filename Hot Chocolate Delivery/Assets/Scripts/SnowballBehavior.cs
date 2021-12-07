@@ -64,6 +64,9 @@ public class SnowballBehavior : MonoBehaviour
 
     private void AddToPool()
     {
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         gameObject.SetActive(false);
     }
 }
