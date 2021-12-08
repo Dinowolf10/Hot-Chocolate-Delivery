@@ -168,11 +168,13 @@ public class PlayerMovement : MonoBehaviour
             //addd camera tilt here
             if (hit.gameObject.tag == ("RightWall"))
             {
-                Camera.main.transform.rotation = Quaternion.Euler(0, 0, 13);
+               // Camera.main.transform.rotation = Quaternion.Euler(new Vector3(0,0,13));
+                Camera.main.transform.Rotate(0, 0, 13);
             }
             else if(hit.gameObject.tag == ("LeftWall"))
             {
-                Camera.main.transform.rotation = Quaternion.Euler(0, 0, -13);
+                //Camera.main.transform.rotation = Quaternion.Euler(0, 0, -13);
+                Camera.main.transform.Rotate(0, 0, -13);
             }
         }
         else
