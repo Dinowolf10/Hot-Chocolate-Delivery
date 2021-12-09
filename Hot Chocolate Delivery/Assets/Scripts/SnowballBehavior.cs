@@ -65,7 +65,7 @@ public class SnowballBehavior : MonoBehaviour
     {
         Vector3 spawnPoint = transform.position;
         GameObject clone = Instantiate(iceToSpawn, spawnPoint, Quaternion.identity);
-        clone.transform.localScale = new Vector3(5.0f, 3.0f, 5.0f);
+        clone.transform.localScale = new Vector3(7.0f, 2.0f, 7.0f);
         this.AddToPool();
     }
     /// <summary>
@@ -76,7 +76,7 @@ public class SnowballBehavior : MonoBehaviour
     {
         Vector3 spawnPoint = transform.position;
         GameObject clone = Instantiate(iceToSpawn, spawnPoint, collision.transform.rotation);
-        clone.transform.localScale = new Vector3(5.0f, 3.0f, 5.0f);
+        clone.transform.localScale = new Vector3(7.0f, 2.0f, 7.0f);
         this.AddToPool();
     }
 }
