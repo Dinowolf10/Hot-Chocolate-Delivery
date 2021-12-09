@@ -35,7 +35,7 @@ public class Sliding : MonoBehaviour
     {
 
         // - slide -    
-        if (Input.GetKeyDown(KeyCode.F) && !isSliding) // press F to slide
+        if (Input.GetKeyDown(KeyCode.E) && !isSliding && controller.isGrounded) // press F to slide
         {
             slideTimer = 0.0f; // start timer
             isSliding = true;
@@ -43,7 +43,7 @@ public class Sliding : MonoBehaviour
         }
         if (isSliding)
         {
-            controller.height = 0.5f * height; // height is crouch height
+            //controller.height = 0.5f * height; // height is crouch height
             speed = slideSpeed; // speed is slide speed
             controller.Move(slideForward * speed);
 

@@ -177,6 +177,10 @@ public class PlayerMovement : MonoBehaviour
                 Camera.main.transform.Rotate(0, 0, -13);
             }
         }
+        else if (hit.gameObject.tag != ("RightWall") || hit.gameObject.tag != ("LeftWall"))
+        {
+            gravity = -20f;
+        }
         else
         {
             gravity = -20f;
@@ -184,5 +188,9 @@ public class PlayerMovement : MonoBehaviour
             //remove camera tilt here
 
         }
+
+
+
     }
+
 }
