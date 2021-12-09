@@ -8,21 +8,25 @@ public class SnowballBehavior : MonoBehaviour
     public GameObject iceToSpawn;
     private float offset = 4;
     private GameObject levelManager;
+    private GameObject snowballStart;
+    private ThrowSnowball throwSnowballScript;
 
     // Start is called before the first frame update
     void Start()
     {
         levelManager = GameObject.Find("LevelManager");
+        snowballStart = GameObject.Find("snowballStart");
+        throwSnowballScript = snowballStart.GetComponent<ThrowSnowball>();
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        if(transform.position.y < -50)
+    {
+        if (transform.position.y < -50)
         {
             this.AddToPool();
         }
-        else if (Input.GetMouseButtonDown(0) && !levelManager.GetComponent<LevelManager>().gamePaused && isActiveAndEnabled)
+        else if (Input.GetMouseButtonDown(0) && !levelManager.GetComponent<LevelManager>().gamePaused && isActiveAndEnabled && throwSnowballScript.LastSnowball)
         {
             SpawnIce();
         }
@@ -56,6 +60,7 @@ public class SnowballBehavior : MonoBehaviour
         transform.rotation = Quaternion.identity;
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         gameObject.SetActive(false);
+        throwSnowballScript.LastSnowball = null;
     }
 
     /// <summary>
