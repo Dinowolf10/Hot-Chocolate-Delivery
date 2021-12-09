@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         // If player presses escape, pause or unpause the game
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !timeUp)
         {
             // If the game is currently not paused, pause the game
             if (!gamePaused)
@@ -68,6 +68,9 @@ public class LevelManager : MonoBehaviour
 
         // Sets timeUp to true
         timeUp = true;
+
+        // Pauses the game to give player option to restart or return to menu
+        PauseGame();
     }
 
     /// <summary>
