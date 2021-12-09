@@ -26,7 +26,7 @@ public class SnowballBehavior : MonoBehaviour
         {
             this.AddToPool();
         }
-        else if (Input.GetMouseButtonDown(0) && !levelManager.GetComponent<LevelManager>().gamePaused && isActiveAndEnabled && throwSnowballScript.LastSnowball)
+        else if (Input.GetMouseButtonDown(1) && !levelManager.GetComponent<LevelManager>().gamePaused && isActiveAndEnabled)
         {
             SpawnIce();
         }

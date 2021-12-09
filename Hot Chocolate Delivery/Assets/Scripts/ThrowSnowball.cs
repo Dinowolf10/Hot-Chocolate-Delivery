@@ -41,7 +41,7 @@ public class ThrowSnowball : MonoBehaviour
     void Update()
     {
         timeSinceThrow += Time.deltaTime;
-        if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime && !levelManager.GetComponent<LevelManager>().gamePaused && !lastSnowball)
+        if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime && !levelManager.GetComponent<LevelManager>().gamePaused)
         {
             timeSinceThrow = 0.0f;
             GameObject clone = SnowballPool.SharedInstance.GetPooledObject();// (snowball, transform.position, transform.rotation);
