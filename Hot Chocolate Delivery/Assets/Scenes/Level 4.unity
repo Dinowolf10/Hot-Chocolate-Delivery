@@ -288,7 +288,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -444,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8457327119719572390, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8457327119719572390, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
       propertyPath: m_AnchorMax.x
@@ -610,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7985746098802649886, guid: e087b8a7f8bbb734b9450c18bdbcfb2e, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7985746098802649886, guid: e087b8a7f8bbb734b9450c18bdbcfb2e, type: 3}
       propertyPath: m_AnchorMax.x

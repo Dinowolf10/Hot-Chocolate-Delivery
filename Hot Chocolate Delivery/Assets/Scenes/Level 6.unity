@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8457327119719572390, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8457327119719572390, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1315,7 +1315,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
