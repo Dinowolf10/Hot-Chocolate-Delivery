@@ -36,11 +36,7 @@ public class SnowballBehavior : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Ice":
-                this.AddToPool();
-                break;
             case "CrackedIce":
-                this.AddToPool();
-                break;
             case "RegSurface":
             case "LeftWall":
             case "RightWall":
