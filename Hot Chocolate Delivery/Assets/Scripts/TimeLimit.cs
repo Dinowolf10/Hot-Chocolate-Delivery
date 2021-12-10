@@ -7,6 +7,8 @@ public class TimeLimit : MonoBehaviour
 {
     public float TimeLeft = 20.0f; // time left in seconds. Change this to change how much time each level gets
 
+    private bool easyMode = false;
+
     [SerializeField]
     private GameObject levelManager;
 
@@ -27,7 +29,13 @@ public class TimeLimit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(TimeLeft > 0) {
+        // Turns on easy mode if player presses left control
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            easyMode = !easyMode;
+        }
+
+        if(TimeLeft > 0 && !easyMode) {
             TimeLeft -= Time.deltaTime;
             this.gameObject.GetComponent<UnityEngine.UI.Text>().text = "Time Remaining: " + (int)TimeLeft;
             if(TimeLeft <= 0.0f) {

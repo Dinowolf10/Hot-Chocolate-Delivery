@@ -970,6 +970,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8457327118316584373, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
+      propertyPath: TimeLeft
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8457327119719572386, guid: 81222e481cc8e61498ed54f4215b5cde, type: 3}
       propertyPath: m_Name
       value: TimeLimit

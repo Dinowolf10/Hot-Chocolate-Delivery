@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         // If the player presses E and they are jumping, start AirDash Coroutine
-        if (Input.GetKeyDown(KeyCode.E) && isJumping && !isDashing && !hasDashed)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.LeftShift)) && isJumping && !isDashing && !hasDashed)
         {
             StartCoroutine("AirDash");
         }

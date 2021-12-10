@@ -5425,9 +5425,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tr: {fileID: 6408105878835246445}
-  slideSpeed: 0.3
+  slideSpeed: 0.2
   speed: 6
-  slideTimerMax: 0.5
+  slideTimerMax: 0.3
 --- !u!1 &7591006732702220842
 GameObject:
   m_ObjectHideFlags: 0

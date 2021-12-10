@@ -35,7 +35,7 @@ public class Sliding : MonoBehaviour
     {
 
         // - slide -    
-        if (Input.GetKeyDown(KeyCode.E) && !isSliding && controller.isGrounded) // press F to slide
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.LeftShift)) && !isSliding && controller.isGrounded) // press F to slide
         {
             slideTimer = 0.0f; // start timer
             isSliding = true;
