@@ -43,18 +43,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      /*  //if player is holding down shift, sprint
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            speed = 24f;
-        }
-      */
-        //when the player stops sprinting, change the speed to reflect that
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            speed = 12f;
-        }
-
         //check the player to see if they are grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
 
