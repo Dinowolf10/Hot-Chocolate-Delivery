@@ -45,7 +45,7 @@ public class ThrowSnowball : MonoBehaviour
         timeSinceThrow += Time.deltaTime;
         if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime && !levelManager.GetComponent<LevelManager>().gamePaused)
         {
-            //  Simulates the player throwing the snowball
+            // Simulates the player throwing the snowball
             StartCoroutine("Throw");
 
             timeSinceThrow = 0.0f;
