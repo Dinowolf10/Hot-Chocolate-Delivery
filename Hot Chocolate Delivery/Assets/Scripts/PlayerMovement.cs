@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gravity = -20f;
+
         //check the player to see if they are grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
 
