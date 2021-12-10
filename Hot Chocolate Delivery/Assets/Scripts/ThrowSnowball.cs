@@ -17,6 +17,8 @@ public class ThrowSnowball : MonoBehaviour
     private GameObject levelManager;
     private GameObject player;
 
+    public Animator playerAnimator;
+
     public GameObject LastSnowball{ 
         get { return lastSnowball; }
         set { lastSnowball = value; }
@@ -43,16 +45,39 @@ public class ThrowSnowball : MonoBehaviour
         timeSinceThrow += Time.deltaTime;
         if(Input.GetMouseButtonDown(0) && timeSinceThrow > reloadTime && !levelManager.GetComponent<LevelManager>().gamePaused)
         {
+            //  Simulates the player throwing the snowball
+            StartCoroutine("Throw");
+
             timeSinceThrow = 0.0f;
-            GameObject clone = SnowballPool.SharedInstance.GetPooledObject();// (snowball, transform.position, transform.rotation);
-            if(clone != null)
-            {
-                clone.transform.position = transform.position;
-                clone.transform.rotation = transform.rotation;
-                clone.SetActive(true);
-                clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength); //from cam position
-                lastSnowball = clone;
-            }
         }
+    }
+
+    /// <summary>
+    /// Controls the player's throwing animation
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator Throw()
+    {
+        // Sets the animator's isThrowing to true
+        playerAnimator.SetBool("isThrowing", true);
+
+        // Wait for 0.25 seconds
+        yield return new WaitForSeconds(0.25f);
+
+        GameObject clone = SnowballPool.SharedInstance.GetPooledObject();// (snowball, transform.position, transform.rotation);
+        if (clone != null)
+        {
+            clone.transform.position = transform.position;
+            clone.transform.rotation = transform.rotation;
+            clone.SetActive(true);
+            clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength); //from cam position
+            lastSnowball = clone;
+        }
+
+        // Wait for 0.35 seconds
+        yield return new WaitForSeconds(0.35f);
+
+        // Set isThrowing to false
+        playerAnimator.SetBool("isThrowing", false);
     }
 }
