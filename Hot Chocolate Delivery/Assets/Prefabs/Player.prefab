@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 6408105877289889813}
   - component: {fileID: 6408105877289889812}
   - component: {fileID: 6408105877289889811}
+  - component: {fileID: 669706596}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -330,7 +331,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 1500
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -371,6 +372,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 180
   playerBody: {fileID: 6408105878835246445}
+--- !u!45 &669706596
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6408105877289889815}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 72cddfac1c26e704fb64dd1f4d6d1a6f, type: 2}
 --- !u!1 &6408105877984492469
 GameObject:
   m_ObjectHideFlags: 0
